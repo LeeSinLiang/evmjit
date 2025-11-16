@@ -20,6 +20,7 @@ endif()
 
 option(EVMJIT_EXAMPLES "Generate build targets for the EVMJIT examples" OFF)
 option(EVMJIT_TESTS "Create targets for CTest" OFF)
+option(EVMJIT_FUZZING "Build fuzzing targets with libFuzzer/AFL" OFF)
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
@@ -51,4 +52,8 @@ add_subdirectory(libevmjit)
 if (EVMJIT_TESTS)
 	enable_testing()
 	add_subdirectory(tests)
+endif()
+
+if (EVMJIT_FUZZING)
+	add_subdirectory(fuzz)
 endif()

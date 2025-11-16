@@ -1,0 +1,25 @@
+homepage: "https://github.com/ethereum/evmjit"
+language: c++
+primary_contact: "security@ethereum.org"
+main_repo: "https://github.com/ethereum/evmjit"
+
+sanitizers:
+  - address
+  - undefined
+
+architectures:
+  - x86_64
+
+fuzzing_engines:
+  - libfuzzer
+  - afl
+  - honggfuzz
+
+help_url: "https://github.com/ethereum/evmjit/blob/master/fuzz/README.md"
+
+file_github_issue: true
+
+auto_ccs:
+  - "security@ethereum.org"
+
+vendor_ccs: []
